@@ -32,7 +32,7 @@ class Stack:
             None
         '''
 
-        if self.top == len(self.elements) - 1:
+        if self.top == self.max - 1:
             print('Stack overflow') # 2) prints warning and returns, instead of raising an exception.
             return None
 
