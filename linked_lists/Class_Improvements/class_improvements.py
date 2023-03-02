@@ -1,10 +1,8 @@
 class Node:
     '''
     Node object.
-
     Args:
         data (str): string value to store in node
-
     Attributes:
         data (str): value stored in node
         next (Node): pointer to next node in list
@@ -22,10 +20,8 @@ class Node:
 class LinkedList:
     '''
     Linked List object.
-
     Args:
         None
-
     Attributes:
         start (Node): pointer to first node in list
     '''
@@ -55,10 +51,8 @@ class LinkedList:
     def traverse(self):
         '''
         Navigates every node in the list.
-
         Args:
             None
-
         Returns:
             None
         '''
@@ -73,10 +67,8 @@ class LinkedList:
     def traverse_iter(self):
         '''
         Iterates trough the list using the __iter__ method.
-
         Args:
             None
-
         Returns:
             None
         '''
@@ -88,10 +80,8 @@ class LinkedList:
     def insert_at_beginning(self, new_node: Node):
         '''
         Inserts a node at the start of the linked list.
-
         Args:
             new_node (Node): node to be inserted
-
         Returns:
             None
         '''
@@ -103,10 +93,8 @@ class LinkedList:
     def insert_at_end(self, new_node: Node):
         '''
         Inserts a node at the end of the linked list.
-
         Args:
             new_node (Node): node to be inserted
-
         Returns:
             None
         '''
@@ -124,11 +112,9 @@ class LinkedList:
     def insert_before(self, reference_node: str, new_node: Node):
         '''
         Inserts a node before the position of the reference node given.
-
         Args:
             reference_node (str): value of node used as reference
             new_node (Node): node to be inserted
-
         Returns:
             None
         '''
@@ -157,7 +143,6 @@ class LinkedList:
     def delete(self, reference_node: str):
         '''
         Deletes a node given a value reference.
-
         Args:
             reference_node (str): value of node used as reference
             
@@ -184,3 +169,25 @@ class LinkedList:
             previous_node = current_node
 
         print('Reference node {} not found in linked list...'.format(reference_node))
+    
+    def Search(self,key):
+        '''
+        Navigates every node in the list.
+        Args:
+            None
+        Returns:
+            None
+        '''
+        current_node = self.start
+
+        print ("")
+        print ("Search:")
+        
+        while current_node is not None: #uso de _iter_
+            
+            print(current_node)
+            if (key == current_node.data):
+                
+                print("Esta aca ↑")
+
+            current_node = current_node.next

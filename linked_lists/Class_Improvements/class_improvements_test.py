@@ -1,4 +1,4 @@
-from linked_list import Node, LinkedList
+from class_improvements import Node, LinkedList
 
 
 # Nodes instantiation
@@ -50,3 +50,5 @@ ll.delete('D')
 print(ll)
 ll.delete('C')
 print(ll)
+
+ll.Search("F")
