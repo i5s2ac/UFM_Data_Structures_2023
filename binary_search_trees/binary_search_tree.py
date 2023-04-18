@@ -96,3 +96,54 @@ class BinarySearchTree:
             subtree = subtree.right_child
 
         return subtree
+    
+    def delete(self, key: int) -> None:
+        """
+        Delete a node from the tree.
+        Args:
+            key: The key of the node to delete.
+        """
+
+        if self.root is None:
+            print('Tree is empty...')
+
+        else:
+            self._delete(key, self.root)
+
+    def _delete(self, key: int, subtree: Node) -> None:
+        """
+        Delete a node from the tree.
+        Args:
+            key: The key of the node to delete.
+            subtree: The root of the subtree to delete from.
+        """
+
+        if key < subtree.data:
+            if subtree.left_child is not None:
+                self._delete(key, subtree.left_child)
+
+            else:
+                print('Key not found...')
+
+        elif key > subtree.data:
+            if subtree.right_child is not None:
+                self._delete(key, subtree.right_child)
+
+            else:
+                print('Key not found...')
+
+        else:
+            if (subtree.left_child is None) and (subtree.right_child is None):
+                subtree = None
+
+            elif (subtree.left_child is None) and (subtree.right_child is not None):
+                subtree = subtree.right_child
+
+            elif (subtree.left_child is not None) and (subtree.right_child is None):
+                subtree = subtree.left_child
+
+            else:
+                min_node = self.find_min(subtree.right_child)
+                subtree.data = min_node.data
+                self._delete(min_node.data, subtree.right_child)
+

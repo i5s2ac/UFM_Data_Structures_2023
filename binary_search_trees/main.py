@@ -12,7 +12,7 @@ print('Current root: {}'.format(bst.root)) # empty root
 # Inserts
 print('\n*** Inserting Nodes in Tree ***\n')
 # n = 10
-nodes_values = [33, 77, 4, 11, 16, 55, 5, 1, 14, 63]
+nodes_values = [12, 77, 4, 11, 16, 55, 5, 1, 14, 63]
 
 # for _ in range(n):
 #     nodes_values.append(random.randint(0, 100))
@@ -31,7 +31,7 @@ bst.traverse(bst.root)
 
 # Search 
 print('\n*** Searching keys in Tree ***\n')
-test_keys = [33, 44, 2, 3, 4, 63, 1]
+test_keys = [12, 1, 2, 63, 4, 9, 1]
 
 for key in test_keys:
     print('Searching for {}: {}'.format(key, bst.search(key)))
@@ -41,3 +41,12 @@ for key in test_keys:
 print('\n*** Searching for min-max in Tree ***\n')
 print('Min: {}'.format(bst.find_min(bst.root)))
 print('Max: {}'.format(bst.find_max(bst.root)))
+
+# Delete 
+print('\n*** Delete node for Tree ***\n')
+test_keys = [12, 1, 2, 63, 4, 9, 1]
+for key in test_keys:
+    print('Delete for node with key: {}'.format(key))
+    bst.delete(key)
+
+print('Current root: {}'.format(bst.root)) # Is the current root
